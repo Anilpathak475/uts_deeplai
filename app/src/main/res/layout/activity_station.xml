@@ -90,7 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/stations"
-                    android:hint="Distination Station Name/Code"
+                    android:hint="Destination Station Name/Code"
                     android:textAlignment="center"
                     tools:listitem="@android:layout/simple_list_item_1" />
             </androidx.cardview.widget.CardView>

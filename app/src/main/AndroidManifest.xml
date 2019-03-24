@@ -10,24 +10,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.PlatformActivity"></activity>
-        <activity android:name=".activity.QrScanActivity" />
-        <activity android:name=".activity.FareActivity" />
-        <activity android:name=".activity.SeasonRegister" />
-        <activity android:name=".activity.Stations" />
-        <activity android:name=".activity.Credential" />
-        <activity android:name=".activity.Login">
+        <activity
+            android:name=".activity.PlatformActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FareActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SeasonRegister"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Stations"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Login"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BookTicket" />
-        <activity android:name=".activity.NormalBook" />
-        <activity android:name=".activity.BookTravel" />
-        <activity android:name=".activity.Register" />
-        <activity android:name=".activity.TicketTypeActivity" />
+        <activity
+            android:name=".activity.BookTicket"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NormalBook"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TicketTypeActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
