@@ -55,8 +55,11 @@ public class Stations extends AppCompatActivity {
         });*/
 
         stations = Arrays.asList(getResources().getStringArray(R.array.stations));
+        stations = Arrays.asList(getResources().getStringArray(R.array.stations));
         spFromStn = findViewById(R.id.frm_to_to_stn);
         spFromStn.setSelection(0, false);
+
+
         spFromStn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -91,17 +94,21 @@ public class Stations extends AppCompatActivity {
         });
 
         submit = findViewById(R.id.btn_submit_journey);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent fareActivity = new Intent(Stations.this, FareActivity.class);
-                Bundle data = new Bundle();
-                data.putString(Constants.FROM_STATION, fromStn);
-                data.putString(Constants.TO_STATION, toStn);
-                fareActivity.putExtras(data);
-                startActivity(fareActivity);
-            }
+        submit.setOnClickListener(view -> {
+            Intent fareActivity = new Intent(Stations.this, FareActivity.class);
+            Bundle data = new Bundle();
+            data.putString(Constants.FROM_STATION, fromStn);
+            data.putString(Constants.TO_STATION, toStn);
+            fareActivity.putExtras(data);
+            startActivity(fareActivity);
         });
 
+        Bundle bundle = getIntent().getExtras();
+        if(bundle.containsKey(Constants.FROM_STATION)) {
+            fromStn = bundle.getString(Constants.FROM_STATION);
+            if(stations.contains(fromStn)) {
+                spFromStn.setSelection(stations.indexOf(fromStn));
+            }
+        }
     }
 }
