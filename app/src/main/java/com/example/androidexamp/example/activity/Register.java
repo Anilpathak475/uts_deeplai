@@ -40,7 +40,7 @@ public class Register extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
+        setContentView(R.layout.activity_registeration);
         sharedPreferenceManager = SharedPreferenceManager.getInstance(this);
 
         final Calendar myCalendar = Calendar.getInstance();
@@ -85,20 +85,29 @@ public class Register extends BaseActivity {
             private boolean validate() {
                 if (TextUtils.isEmpty(edtPhoneNumber.getText().toString())) {
                     Toast.makeText(Register.this, "Please enter your phone number", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
                 if (TextUtils.isEmpty(edtName.getText().toString())) {
                     Toast.makeText(Register.this, "Please enter your name", Toast.LENGTH_SHORT).show();
                     return false;
                 }
                 if (TextUtils.isEmpty(edt_birthday.getText().toString())) {
-                    Toast.makeText(Register.this, "Please enter your name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "Please enter your dob", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
                 if (TextUtils.isEmpty(edtRegisterPassword.getText().toString())) {
                     Toast.makeText(Register.this, "Please enter password", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
                 if (TextUtils.isEmpty(edtRegisterConfirmPassword.getText().toString())) {
                     Toast.makeText(Register.this, "Please re-enter password", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
+                if (!edtRegisterPassword.getText().toString().equalsIgnoreCase(edtRegisterConfirmPassword.getText().toString())) {
+                    Toast.makeText(Register.this, "Both password should match", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+
                 return true;
             }
         });

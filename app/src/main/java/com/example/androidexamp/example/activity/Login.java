@@ -35,7 +35,7 @@ public class Login extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_main);
+        setContentView(layout.activity_login);
         ButterKnife.bind(this);
         mRealm = Realm.getInstance(this);
         mRealm.beginTransaction();

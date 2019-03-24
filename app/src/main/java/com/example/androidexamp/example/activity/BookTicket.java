@@ -14,7 +14,7 @@ public class BookTicket extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_booking);
         cardBookTicket = findViewById(R.id.card_book_ticket);
         cardBookTicket.setOnClickListener(v -> {
             Intent intent = new Intent(BookTicket.this, NormalBook.class);
