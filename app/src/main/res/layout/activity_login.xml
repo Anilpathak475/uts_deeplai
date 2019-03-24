@@ -32,8 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@null"
-            android:hint="Phone Number"
-            android:inputType="phone"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             android:paddingStart="5dp"
             android:textSize="16sp"
             android:textStyle="normal" />

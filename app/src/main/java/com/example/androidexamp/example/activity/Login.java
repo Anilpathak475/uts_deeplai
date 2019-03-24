@@ -37,13 +37,6 @@ public class Login extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_login);
         ButterKnife.bind(this);
-        mRealm = Realm.getInstance(this);
-        mRealm.beginTransaction();
-       /* MyBook book = mRealm.createObject(MyBook.class);
-        book.setTitle("Sample title");
-        mRealm.commitTransaction();
-        List<MyBook> bookList= mRealm.allObjects(MyBook.class);*/
-        btnLogin=findViewById(id.btn_login);
 
         btnLogin.setOnClickListener(v -> {
             if (validate()) {

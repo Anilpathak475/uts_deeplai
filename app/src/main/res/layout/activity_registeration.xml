@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="24dp"
     android:layout_marginTop="10dp"
     android:layout_marginRight="24dp"
@@ -19,32 +19,11 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtPhoneNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Enter Mobile Number" />
-
-    <EditText
         android:id="@+id/edtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:hint="Enter Your Name" />
-
-    <EditText
-        android:id="@+id/edtRegisterPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Password" />
-
-    <EditText
-        android:id="@+id/edtRegisterConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Confirm Password" />
 
     <TextView
         android:layout_width="match_parent"
@@ -53,17 +32,31 @@
         android:text="Gender"
         android:textColor="#4682B4" />
 
-    <RadioButton
+    <RadioGroup
+        android:id="@+id/rd_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Female" />
+        android:orientation="horizontal">
 
-    <RadioButton
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Male" />
+
+    </RadioGroup>
+    <EditText
+        android:id="@+id/edtPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Male" />
+        android:layout_marginTop="15dp"
+        android:hint="Enter Phone Number"
+        android:inputType="phone" />
 
     <TextView
         android:layout_width="match_parent"
@@ -72,32 +65,61 @@
         android:text="Select Date of Birth:"
         android:textColor="#4682B4" />
 
-    <EditText
-        android:id="@+id/edt_birthday"
+    <TextView
+        android:id="@+id/txtDob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:clickable="true"
-        android:editable="false"
         android:focusable="false"
-        android:hint="MM/DD/YYYY" />
+        android:hint="DD - MM - YYYY"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_get_otp"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
         android:layout_marginTop="10dp"
-        android:elevation="10dp"
-        app:cardCornerRadius="10dp">
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
 
-        <Button
-            android:id="@+id/btnRegisterDone"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="#4682B4"
-            android:text="Register"
-            android:textColor="#FFFFFF" />
-    </androidx.cardview.widget.CardView>
+    <com.marlonmafra.android.widget.EditTextPassword
+        android:id="@+id/edt_new_password"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="5dp"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:hidePasswordIcon="@drawable/hide"
+        app:iconPosition="right"
+        app:showPasswordIcon="@drawable/show" />
+
+    <com.marlonmafra.android.widget.EditTextPassword
+        android:id="@+id/edt_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="5dp"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:hidePasswordIcon="@drawable/hide"
+        app:iconPosition="right"
+        app:showPasswordIcon="@drawable/show" />
+
+
+    <Button
+        android:id="@+id/btnRegisterDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4682B4"
+        android:text="Register"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>
