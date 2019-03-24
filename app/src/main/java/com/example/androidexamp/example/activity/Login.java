@@ -48,7 +48,7 @@ public class Login extends BaseActivity {
     }
 
     @OnClick(id.btn_register)
-    void OnLogin() {
+    void onRegister() {
         Intent intent = new Intent(Login.this, Register.class);
         startActivity(intent);
     }
@@ -60,7 +60,7 @@ public class Login extends BaseActivity {
     }
 
     @OnClick(id.btn_login)
-    void onRegister() {
+    void onLogin() {
         if (validate()) {
             sharedPreferenceManager.saveValue(Constants.AutoLogin, Boolean.toString(chkLogin.isChecked()));
             Toast.makeText(Login.this, "Login", Toast.LENGTH_SHORT).show();
