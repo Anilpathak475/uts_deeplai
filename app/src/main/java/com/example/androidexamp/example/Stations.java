@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-public class Main7Activity extends AppCompatActivity {
+public class Stations extends AppCompatActivity {
     CardView cardSourceStation;
     CardView cardDestinationStation;
     CardView cardDone;

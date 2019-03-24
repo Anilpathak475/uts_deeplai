@@ -11,7 +11,7 @@ import androidx.cardview.widget.CardView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class Main6Activity extends AppCompatActivity {
+public class Credential extends AppCompatActivity {
     @BindView(R.id.edtBookPhoneNumber)
     EditText edtBookPhoneNumber;
     @BindView(R.id.edtBookingPassword)
@@ -39,11 +39,11 @@ private SharedPreferenceManager sharedPreferenceManager;
 
             private boolean validate() {
                 if (TextUtils.isEmpty(edtBookPhoneNumber.getText().toString())){
-                    Toast.makeText(Main6Activity.this, "Please enter your Phone number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Credential.this, "Please enter your Phone number", Toast.LENGTH_SHORT).show();
                     return false;
                 }
                 if (TextUtils.isEmpty(edtBookingPassword.getText().toString())){
-                    Toast.makeText(Main6Activity.this, "Please enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Credential.this, "Please enter password", Toast.LENGTH_SHORT).show();
                     return false;
                 }
                 return true;

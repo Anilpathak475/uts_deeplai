@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-public class Main3Activity extends AppCompatActivity {
+public class NormalBook extends AppCompatActivity {
     CardView cardNormalBook;
     CardView cardQuickBooking;
     CardView cardPlatFormTicket;
@@ -20,7 +20,7 @@ public class Main3Activity extends AppCompatActivity {
         cardNormalBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(Main3Activity.this,Main4Activity.class);
+                Intent intent = new Intent(NormalBook.this, BookTravel.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +28,7 @@ public class Main3Activity extends AppCompatActivity {
         cardQuickBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Main3Activity.this,Main4Activity.class);
+                Intent intent = new Intent(NormalBook.this, BookTravel.class);
                 startActivity(intent);
             }
         });
@@ -36,7 +36,7 @@ public class Main3Activity extends AppCompatActivity {
         cardPlatFormTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Main3Activity.this,Main4Activity.class);
+                Intent intent = new Intent(NormalBook.this, BookTravel.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +44,7 @@ public class Main3Activity extends AppCompatActivity {
         cardSeasonTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(Main3Activity.this,Main4Activity.class);
+                Intent intent = new Intent(NormalBook.this, BookTravel.class);
                 startActivity(intent);
             }
         });

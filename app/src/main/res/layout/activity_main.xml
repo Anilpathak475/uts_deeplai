@@ -1,44 +1,73 @@
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_marginRight="50dp"
-    android:layout_marginLeft="50dp"
+    android:layout_marginLeft="24dp"
     android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp">
+    android:layout_marginRight="24dp"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enter your credentials"
         android:textAlignment="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:autoSizeTextType="uniform" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="E-mail"
-        android:id="@+id/edtEmail"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Password"
-        android:id="@+id/edtPassword"/>
 
-    <TextView
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="forgot Password" />
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <CheckBox
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@null"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:paddingStart="5dp"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Auto-login" />
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.marlonmafra.android.widget.EditTextPassword
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="5dp"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:hidePasswordIcon="@drawable/hide"
+            app:iconPosition="right"
+            app:showPasswordIcon="@drawable/show" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btn_login"
@@ -48,26 +77,34 @@
         android:background="#4682B4"
         android:text="Login"
         android:textColor="#FFFFFF"></Button>
-    <Button
+
+    <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="register"
-        android:background="#4682B4"
+        android:text="Auto-login" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Forgot Password"
+        android:textAlignment="viewEnd"
+        android:textColor="#4682B4" />
+
+    <Button
         android:id="@+id/btn_register"
-        android:textColor="#FFFFFF"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#4682B4"
+        android:text="register"
+        android:textColor="#FFFFFF" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Helpline"
-        android:layout_marginRight="40dp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Show Booked Ticket"
-        android:background="#4682B4"
-        android:id="@+id/btn_Show"
-        android:textColor="#FFFFFF"/>
+        android:textAlignment="center" />
 </LinearLayout>

@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-public class Main2Activity extends AppCompatActivity {
+public class BookTicket extends AppCompatActivity {
     CardView cardBookTicket;
 
     @Override
@@ -18,7 +18,7 @@ public class Main2Activity extends AppCompatActivity {
         cardBookTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
+                Intent intent = new Intent(BookTicket.this, NormalBook.class);
                 startActivity(intent);
                 }
         });
