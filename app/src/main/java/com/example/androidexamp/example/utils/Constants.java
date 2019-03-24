@@ -2,6 +2,7 @@ package com.example.androidexamp.example.utils;
 
 public interface Constants {
     String Email="email";
+    String AutoLogin="autoLogin";
     String Password="password";
     String Name="name";
     String Phone="PhoneNumber";

@@ -55,7 +55,7 @@ public class Stations extends AppCompatActivity {
         });*/
 
         stations = Arrays.asList(getResources().getStringArray(R.array.stations));
-        spFromStn = findViewById(R.id.sp_from_stn);
+        spFromStn = findViewById(R.id.frm_to_to_stn);
         spFromStn.setSelection(0, false);
         spFromStn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
