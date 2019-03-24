@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_main);
+        setContentView(layout.activity_login);
         mRealm = Realm.getInstance(this);
         mRealm.beginTransaction();
       /*  MyBook book = mRealm.createObject(MyBook.class);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 if (validate()) {
                     sharedPreferenceManager.saveValue(Constants.Email, edtEmail.getText().toString());
                     sharedPreferenceManager.saveValue(Constants.Password, edtPassword.getText().toString());
-                    Toast.makeText(MainActivity.this, "Login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "activity_login", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                     startActivity(intent);
                 }

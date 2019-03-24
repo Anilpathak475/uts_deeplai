@@ -14,7 +14,7 @@ public class Main7Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main7);
+        setContentView(R.layout.activity_station);
         cardSourceStation=findViewById(R.id.card_source_station);
         cardSourceStation.setOnClickListener(new View.OnClickListener() {
             @Override
