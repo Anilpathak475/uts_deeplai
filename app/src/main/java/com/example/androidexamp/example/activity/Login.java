@@ -3,63 +3,70 @@ package com.example.androidexamp.example.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.androidexamp.example.BaseActivity;
 import com.example.androidexamp.example.R;
 import com.example.androidexamp.example.utils.Constants;
-import com.example.androidexamp.example.utils.SharedPreferenceManager;
 import com.marlonmafra.android.widget.EditTextPassword;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.realm.Realm;
+import butterknife.OnClick;
 
 import static com.example.androidexamp.example.R.id;
-import static com.example.androidexamp.example.R.layout;
+
 
 public class Login extends BaseActivity {
-    Button btnRegister;
-    Button btnShow;
     @BindView(R.id.edtEmail)
     EditText edtEmail;
+
     @BindView(R.id.edt_password)
     EditTextPassword edtPassword;
-    @BindView(id.btn_login)
-    Button btnLogin;
-    private Realm mRealm;
+
+    @BindView(id.chkLogin)
+    CheckBox chkLogin;
+
+    @BindView(id.txtForgotPassword)
+    TextView txtForgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_login);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
-        btnLogin.setOnClickListener(v -> {
-            if (validate()) {
-                sharedPreferenceManager.saveValue(Constants.Email, edtEmail.getText().toString());
-                sharedPreferenceManager.saveValue(Constants.Password, edtPassword.getText().toString());
-                Toast.makeText(Login.this, "Login", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Login.this, BookTicket.class);
-                startActivity(intent);
+        if (Boolean.valueOf(sharedPreferenceManager.getValue(Constants.AutoLogin))) {
+            if (!TextUtils.isEmpty(sharedPreferenceManager.getValue(Constants.Email))) {
+                edtEmail.setText(sharedPreferenceManager.getValue(Constants.Email));
+                edtPassword.setText(sharedPreferenceManager.getValue(Constants.Password));
+                chkLogin.setChecked(true);
             }
-        });
+        }
+    }
 
-        btnRegister=findViewById(id.btn_register);
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btnRegister.setOnClickListener(this);
-                Toast.makeText(Login.this, "register", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Login.this, Register.class);
-                startActivity(intent);
-            }
-        });
+    @OnClick(id.btn_register)
+    void OnLogin() {
+        Intent intent = new Intent(Login.this, Register.class);
+        startActivity(intent);
+    }
 
-        sharedPreferenceManager=SharedPreferenceManager.getInstance(this);
+    @OnClick(id.txtForgotPassword)
+    void onForgotPassword() {
+        Intent intent = new Intent(Login.this, Register.class);
+        startActivity(intent);
+    }
+
+    @OnClick(id.btn_login)
+    void onRegister() {
+        if (validate()) {
+            sharedPreferenceManager.saveValue(Constants.AutoLogin, Boolean.toString(chkLogin.isChecked()));
+            Toast.makeText(Login.this, "Login", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Login.this, BookTicket.class);
+            startActivity(intent);
+        }
     }
 
     private boolean validate() {

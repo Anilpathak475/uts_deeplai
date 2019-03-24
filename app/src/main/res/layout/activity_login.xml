@@ -76,15 +76,17 @@
         android:layout_marginTop="15dp"
         android:background="#4682B4"
         android:text="Login"
-        android:textColor="#FFFFFF"></Button>
+        android:textColor="#FFFFFF" />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:id="@+id/chkLogin"
         android:text="Auto-login" />
 
     <TextView
+        android:id="@+id/txtForgotPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

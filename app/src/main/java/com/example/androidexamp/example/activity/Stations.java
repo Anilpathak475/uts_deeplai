@@ -1,7 +1,6 @@
 package com.example.androidexamp.example.activity;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.androidexamp.example.R;
 
@@ -18,25 +17,16 @@ public class Stations extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_station);
         cardSourceStation=findViewById(R.id.card_source_station);
-        cardSourceStation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        cardSourceStation.setOnClickListener(view -> {
 
-            }
         });
         cardDestinationStation=findViewById(R.id.card_destination_station);
-        cardDestinationStation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        cardDestinationStation.setOnClickListener(view -> {
 
-            }
         });
         cardDone=findViewById(R.id.card_done);
-        cardDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        cardDone.setOnClickListener(view -> {
 
-            }
         });
     }
 }

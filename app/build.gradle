@@ -36,6 +36,9 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.marlonmafra.android.widget:edittext-password:1.0.0'
     implementation 'io.realm:realm-annotations:0.88.3'
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+    implementation 'com.google.zxing:core:3.3.2'
+
     implementation 'io.realm:realm-android-library:0.88.3'
 
     implementation 'android.arch.persistence.room:runtime:' + rootProject.archRoomVersion

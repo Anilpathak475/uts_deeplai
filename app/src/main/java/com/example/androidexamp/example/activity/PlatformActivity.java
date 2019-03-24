@@ -6,11 +6,11 @@ import com.example.androidexamp.example.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BookTravel extends AppCompatActivity {
+public class PlatformActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booktravel);
+        setContentView(R.layout.activity_platform);
     }
 }
