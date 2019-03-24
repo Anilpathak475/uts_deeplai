@@ -1,10 +1,14 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.androidexamp.example.R;
+import com.example.androidexamp.example.utils.Constants;
+import com.example.androidexamp.example.utils.SharedPreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;

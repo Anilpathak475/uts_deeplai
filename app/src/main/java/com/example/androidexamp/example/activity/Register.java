@@ -1,23 +1,28 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.activity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.androidexamp.example.BaseActivity;
+import com.example.androidexamp.example.R;
+import com.example.androidexamp.example.utils.Constants;
+import com.example.androidexamp.example.utils.SharedPreferenceManager;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import butterknife.BindView;
 
-public class Register extends AppCompatActivity {
+public class Register extends BaseActivity {
     EditText edtBirthday;
     @BindView(R.id.edtPhoneNumber)
     EditText edtPhoneNumber;
@@ -31,7 +36,6 @@ public class Register extends AppCompatActivity {
     EditText edt_birthday;
     @BindView(R.id.card_get_otp)
     CardView cardGetOtp;
-    private SharedPreferenceManager sharedPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +72,13 @@ public class Register extends AppCompatActivity {
                     sharedPreferenceManager.saveValue(Constants.Birthday, edt_birthday.getText().toString());
                     sharedPreferenceManager.saveValue(Constants.RegisterPassword, edtRegisterPassword.getText().toString());
                     sharedPreferenceManager.saveValue(Constants.RegisterConfirmPassword, edtRegisterConfirmPassword.getText().toString());
-                    Intent intent = new Intent(Register.this, BookTicket.class);
-                    startActivity(intent);
+                    uiUtils.showProgressDialog();
+                    new Handler().postDelayed(() -> {
+                        uiUtils.dismissDialog();
+                        Intent intent = new Intent(Register.this, Login.class);
+                        startActivity(intent);
+                    }, 1000);
+
                 }
             }
 

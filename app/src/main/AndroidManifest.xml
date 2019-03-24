@@ -8,22 +8,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".UtsApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".FareActivity"></activity>
-        <activity android:name=".SeasonRegister" />
-        <activity android:name=".Stations" />
-        <activity android:name=".Credential" />
-        <activity android:name=".Login">
+        <activity android:name=".activity.FareActivity"></activity>
+        <activity android:name=".activity.SeasonRegister" />
+        <activity android:name=".activity.Stations" />
+        <activity android:name=".activity.Credential" />
+        <activity android:name=".activity.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BookTicket" />
-        <activity android:name=".NormalBook" />
-        <activity android:name=".BookTravel" />
-        <activity android:name=".Register" />
+        <activity android:name=".activity.BookTicket" />
+        <activity android:name=".activity.NormalBook" />
+        <activity android:name=".activity.BookTravel" />
+        <activity android:name=".activity.Register" />
     </application>
 
 </manifest>

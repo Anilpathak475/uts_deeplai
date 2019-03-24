@@ -1,7 +1,9 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.activity;
 
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.androidexamp.example.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;

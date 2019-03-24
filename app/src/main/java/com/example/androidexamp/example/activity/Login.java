@@ -1,4 +1,4 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.androidexamp.example.BaseActivity;
+import com.example.androidexamp.example.R;
+import com.example.androidexamp.example.utils.Constants;
+import com.example.androidexamp.example.utils.SharedPreferenceManager;
 import com.marlonmafra.android.widget.EditTextPassword;
 
-import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
@@ -18,7 +21,7 @@ import io.realm.Realm;
 import static com.example.androidexamp.example.R.id;
 import static com.example.androidexamp.example.R.layout;
 
-public class Login extends AppCompatActivity {
+public class Login extends BaseActivity {
     Button btnRegister;
     Button btnShow;
     @BindView(R.id.edtEmail)
@@ -28,7 +31,6 @@ public class Login extends AppCompatActivity {
     @BindView(id.btn_login)
     Button btnLogin;
     private Realm mRealm;
-    private SharedPreferenceManager sharedPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,37 +45,16 @@ public class Login extends AppCompatActivity {
         List<MyBook> bookList= mRealm.allObjects(MyBook.class);*/
         btnLogin=findViewById(id.btn_login);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-                public void onClick(View v) {
-                if (validate()) {
-                    sharedPreferenceManager.saveValue(Constants.Email, edtEmail.getText().toString());
-                    sharedPreferenceManager.saveValue(Constants.Password, edtPassword.getText().toString());
-                    Toast.makeText(Login.this, "Login", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Login.this, BookTicket.class);
-                    startActivity(intent);
-                }
-            }
-
-            private boolean validate() {
-                if (TextUtils.isEmpty(edtEmail.getText().toString())) {
-                    Toast.makeText(Login.this, "Please enter your email address", Toast.LENGTH_SHORT).show();
-                return false;
-                }
-                if (TextUtils.isEmpty(edtPassword.getText().toString())) {
-                    Toast.makeText(Login.this, "Please enter your password", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-                return true;
+        btnLogin.setOnClickListener(v -> {
+            if (validate()) {
+                sharedPreferenceManager.saveValue(Constants.Email, edtEmail.getText().toString());
+                sharedPreferenceManager.saveValue(Constants.Password, edtPassword.getText().toString());
+                Toast.makeText(Login.this, "Login", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Login.this, BookTicket.class);
+                startActivity(intent);
             }
         });
 
-       /* BackgroundMail backgroundMail = new BackgroundMail(this);
-        backgroundMail.setGmailUserName("Anil@theprocedure.in");
-        backgroundMail.setGmailPassword("Cullean*1");
-        backgroundMail.setFormSubject("rvwdsayntre");
-        backgroundMail.setMailTo("Anil@theprocedure.in");
-        backgroundMail.send();*/
         btnRegister=findViewById(id.btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +67,27 @@ public class Login extends AppCompatActivity {
         });
 
         sharedPreferenceManager=SharedPreferenceManager.getInstance(this);
+    }
+
+    private boolean validate() {
+        if (TextUtils.isEmpty(edtEmail.getText().toString())) {
+            Toast.makeText(Login.this, "Please enter your email address", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (TextUtils.isEmpty(edtPassword.getText().toString())) {
+            Toast.makeText(Login.this, "Please enter your password", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (!sharedPreferenceManager.getValue(Constants.Email).equalsIgnoreCase(edtEmail.getText().toString())) {
+            Toast.makeText(Login.this, "Email or password is wrong", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (!sharedPreferenceManager.getValue(Constants.Password).equalsIgnoreCase(edtPassword.getText().toString())) {
+            Toast.makeText(Login.this, "Email or password is wrong", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 
 }

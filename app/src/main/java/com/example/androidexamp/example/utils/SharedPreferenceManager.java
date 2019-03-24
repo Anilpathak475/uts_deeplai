@@ -1,7 +1,9 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.example.androidexamp.example.BuildConfig;
 
 /**
  * Created by anilpathak on 05/09/17.

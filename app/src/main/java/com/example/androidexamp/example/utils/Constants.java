@@ -1,4 +1,4 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.utils;
 
 public interface Constants {
     String Email="email";

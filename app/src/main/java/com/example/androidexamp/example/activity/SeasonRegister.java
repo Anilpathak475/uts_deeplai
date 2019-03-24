@@ -1,10 +1,12 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.activity;
 
 import android.os.Bundle;
 
+import com.example.androidexamp.example.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FareActivity extends AppCompatActivity {
+public class SeasonRegister extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
