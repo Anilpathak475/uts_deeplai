@@ -14,171 +14,179 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/screen_background_light_transparent"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:autoSizeTextType="uniform"
-                android:text="REGISTRATION"
-                android:textAlignment="center"
-                android:textColor="#4682B4"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-            <EditText
-                android:id="@+id/edtName"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="REGISTRATION"
+                    android:textAlignment="center"
+                    android:textColor="#4682B4"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="Enter Your Name"
+                    android:paddingLeft="8dp"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="4dp"
+                    android:text="Gender"
+                    android:textAllCaps="true"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <RadioGroup
+                    android:id="@+id/rd_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Female"
+                        android:typeface="serif" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center"
+                        android:text="Male"
+                        android:typeface="serif" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/edtPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="Enter Phone Number"
+                    android:inputType="phone"
+                    android:paddingLeft="8dp"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="4dp"
+                    android:text="Select Date of Birth:"
+                    android:textAllCaps="true"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:id="@+id/txtDob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:focusable="false"
+                    android:hint="DD - MM - YYYY"
+                    android:padding="4dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#111"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <EditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="8dp"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <com.marlonmafra.android.widget.EditTextPassword
+                    android:id="@+id/edt_new_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edittext_bg"
+                    android:fontFamily="sans-serif"
+                    android:hint="New Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingEnd="5dp"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    app:hidePasswordIcon="@drawable/hide"
+                    app:iconPosition="right"
+                    app:showPasswordIcon="@drawable/show" />
+
+                <com.marlonmafra.android.widget.EditTextPassword
+                    android:id="@+id/edt_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edittext_bg"
+                    android:fontFamily="sans-serif"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingEnd="5dp"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    app:hidePasswordIcon="@drawable/hide"
+                    app:iconPosition="right"
+                    app:showPasswordIcon="@drawable/show" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnRegisterDone"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/edittext_bg"
-                android:hint="Enter Your Name"
-                android:paddingLeft="8dp"
-                android:textAllCaps="false"
-                android:textSize="14sp"
+                android:background="#4682B4"
+                android:text="Register"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:typeface="serif" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="4dp"
-                android:text="Gender"
-                android:textAllCaps="true"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:typeface="serif" />
-
-            <RadioGroup
-                android:id="@+id/rd_gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Female"
-                    android:typeface="serif" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center"
-                    android:text="Male"
-                    android:typeface="serif" />
-
-            </RadioGroup>
-
-            <EditText
-                android:id="@+id/edtPhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/edittext_bg"
-                android:hint="Enter Phone Number"
-                android:inputType="phone"
-                android:paddingLeft="8dp"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:typeface="serif" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="4dp"
-                android:text="Select Date of Birth:"
-                android:textAllCaps="true"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:typeface="serif" />
-
-            <TextView
-                android:id="@+id/txtDob"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:focusable="false"
-                android:hint="DD - MM - YYYY"
-                android:padding="4dp"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="#111"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:typeface="serif" />
-
-            <EditText
-                android:id="@+id/edtEmail"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/edittext_bg"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="8dp"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:typeface="serif" />
-
-            <com.marlonmafra.android.widget.EditTextPassword
-                android:id="@+id/edt_new_password"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/edittext_bg"
-                android:fontFamily="sans-serif"
-                android:hint="New Password"
-                android:inputType="textPassword"
-                android:paddingStart="5dp"
-                android:paddingLeft="8dp"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:typeface="serif"
-                app:hidePasswordIcon="@drawable/hide"
-                app:iconPosition="right"
-                app:showPasswordIcon="@drawable/show" />
-
-            <com.marlonmafra.android.widget.EditTextPassword
-                android:id="@+id/edt_confirm_password"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/edittext_bg"
-                android:fontFamily="sans-serif"
-                android:hint="Confirm Password"
-                android:inputType="textPassword"
-                android:paddingStart="5dp"
-                android:paddingLeft="8dp"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:typeface="serif"
-                app:hidePasswordIcon="@drawable/hide"
-                app:iconPosition="right"
-                app:showPasswordIcon="@drawable/show" />
-
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnRegisterDone"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:background="#4682B4"
-            android:text="Register"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="serif" />
     </ScrollView>
 </LinearLayout>
