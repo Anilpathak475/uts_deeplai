@@ -8,16 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
-import java.util.List;
-
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.realm.Realm;
 
-import static com.example.androidexamp.example.R.*;
+import static com.example.androidexamp.example.R.id;
+import static com.example.androidexamp.example.R.layout;
 
 public class MainActivity extends AppCompatActivity {
     Button btnRegister;
