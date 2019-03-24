@@ -20,8 +20,6 @@ import androidx.cardview.widget.CardView;
 public class Stations extends AppCompatActivity {
 
     List<String> stations = null;
-
-
     CardView cardSourceStation;
     CardView cardDestinationStation;
     AppCompatSpinner spFromStn;
