@@ -1,0 +1,75 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Normal Booking"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#4682B4"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From Station"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="250dp"
+        android:textColor="#4682B4"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_margin="10dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/card_source_station">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Source Station Name/Code"
+            android:layout_marginRight="120dp"/>
+    </android.support.v7.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" To Station"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="250dp"
+        android:textColor="#4682B4"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_margin="10dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/card_destination_station">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Distination Station Name/Code"
+            android:layout_marginRight="100dp"/>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="80dp"
+        android:background="#4682B4"
+        android:elevation="10dp"
+       >
+        <Button
+            android:id="@+id/btn_submit_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4682B4"
+            android:text="DONE"
+            android:textAlignment="center"/>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
