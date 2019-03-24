@@ -1,4 +1,4 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.utils;
 
 public interface Constants {
     String Email="email";
@@ -6,8 +6,10 @@ public interface Constants {
     String Name="name";
     String Phone="PhoneNumber";
     String Birthday="Birthday";
+    String AutoLogin = "autoLogin";
     String RegisterPassword="RegisterPassword";
     String RegisterConfirmPassword="RegisterConfirmPassword";
     String BookPhoneNumber="BookPhoneNumber";
     String BookinpPssword="BookingPassword";
+    String FROM_STATION = "fromStation";
 }

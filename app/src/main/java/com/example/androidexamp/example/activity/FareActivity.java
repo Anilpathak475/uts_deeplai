@@ -1,10 +1,12 @@
-package com.example.androidexamp.example;
+package com.example.androidexamp.example.activity;
 
 import android.os.Bundle;
 
+import com.example.androidexamp.example.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Main8Activity extends AppCompatActivity {
+public class FareActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
