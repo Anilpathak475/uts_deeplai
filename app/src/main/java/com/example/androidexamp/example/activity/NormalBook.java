@@ -17,7 +17,7 @@ public class NormalBook extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_bookingtype);
         cardNormalBook=findViewById(R.id.card_normal_book);
         cardNormalBook.setOnClickListener(new View.OnClickListener() {
             @Override

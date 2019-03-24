@@ -10,10 +10,13 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:autoSizeTextType="uniform"
         android:text="REGISTRATION"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#4682B4"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edtPhoneNumber"
@@ -46,39 +49,34 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Gender" />
+        android:layout_marginTop="15dp"
+        android:text="Gender"
+        android:textColor="#4682B4" />
 
-    <RadioGroup
+    <RadioButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="2dp"
+        android:text="Female" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Female" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="Male" />
-
-    </RadioGroup>
-
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Male" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Select Date of Birth:" />
+        android:layout_marginTop="15dp"
+        android:text="Select Date of Birth:"
+        android:textColor="#4682B4" />
 
     <EditText
         android:id="@+id/edt_birthday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:clickable="true"
         android:editable="false"
         android:focusable="false"
@@ -96,9 +94,10 @@
         <Button
             android:id="@+id/btnRegisterDone"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="#4682B4"
-            android:text="Get OTP" />
+            android:text="Register"
+            android:textColor="#FFFFFF" />
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
