@@ -12,9 +12,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.FareActivity"></activity>
         <activity android:name=".activity.SeasonRegister" />
-        <activity android:name=".activity.Stations" />
         <activity android:name=".activity.Credential" />
-        <activity android:name=".activity.Login">
+        <activity android:name=".activity.Stations">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
