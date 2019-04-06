@@ -36,8 +36,8 @@ public class FareActivity extends BaseActivity {
         setContentView(R.layout.activity_fare);
         /*Get Intent Extras*/
         Bundle _extras = getIntent().getExtras();
-        fromStn = _extras.getString("$FROM_STATION");
-        toStn = _extras.getString("$TO_STATION");
+        fromStn = _extras.getString(Constants.FROM_STATION);
+        toStn = _extras.getString(Constants.TO_STATION);
         /*End*/
 
         stations = Arrays.asList(getResources().getStringArray(R.array.stations));

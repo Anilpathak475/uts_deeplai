@@ -104,11 +104,13 @@ public class Stations extends AppCompatActivity {
         });
 
         Bundle bundle = getIntent().getExtras();
+        if(bundle!=null) {
         if(bundle.containsKey(Constants.FROM_STATION)) {
             fromStn = bundle.getString(Constants.FROM_STATION);
-            if(stations.contains(fromStn)) {
+            if (stations.contains(fromStn)) {
                 spFromStn.setSelection(stations.indexOf(fromStn));
             }
+        }
         }
     }
 }
