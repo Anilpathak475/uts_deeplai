@@ -41,13 +41,15 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female" />
+            android:text="Female"
+            android:id="@+id/radio_female"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="Male" />
+            android:text="Male"
+            android:id="@+id/radio_male"/>
 
     </RadioGroup>
     <EditText
