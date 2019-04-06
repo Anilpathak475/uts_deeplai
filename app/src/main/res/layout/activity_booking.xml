@@ -1,156 +1,185 @@
-<LinearLayout android:layout_height="match_parent"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_book_ticket"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:elevation="8dp"
         app:cardBackgroundColor="#4682B4"
-        app:cardCornerRadius="10dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/card_book_ticket">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+        app:cardCornerRadius="10dp">
 
-        <ImageView
-            android:id="@+id/img_book_ticket_start"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="4dp"
-            android:background="@drawable/book_ticket" />
-
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_toStartOf="@+id/img_book_ticket_end"
-            android:layout_toLeftOf="@+id/img_book_ticket_end"
-            android:layout_toEndOf="@+id/img_book_ticket_start"
-            android:layout_toRightOf="@+id/img_book_ticket_start"
-            android:text="Book Ticket"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:padding="8dp">
 
-        <ImageView
-            android:id="@+id/img_book_ticket_end"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/right" />
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/img_book_ticket_start"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="4dp"
+                android:background="@drawable/book_ticket" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_toStartOf="@+id/img_book_ticket_end"
+                android:layout_toLeftOf="@+id/img_book_ticket_end"
+                android:layout_toEndOf="@+id/img_book_ticket_start"
+                android:layout_toRightOf="@+id/img_book_ticket_start"
+                android:padding="8dp"
+                android:text="Book Ticket"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <ImageView
+                android:id="@+id/img_book_ticket_end"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/right" />
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_cancel_ticket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#4682B4"
         android:layout_margin="10dp"
         android:elevation="8dp"
-        app:cardCornerRadius="10dp"
-        android:id="@+id/card_cancel_ticket">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="8dp"
-        android:background="#4682B4">
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/cancel"
-            android:id="@+id/img_cancel_start"
-            android:layout_centerVertical="true"/>
+        app:cardBackgroundColor="#4682B4"
+        app:cardCornerRadius="10dp">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_toStartOf="@+id/img_cancel_end"
-            android:layout_toLeftOf="@+id/img_cancel_start"
-            android:layout_toEndOf="@+id/img_cancel_start"
-            android:layout_toRightOf="@+id/img_cancel_start"
-            android:text="Cancel Ticket"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            />
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/right"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:id="@+id/img_cancel_end"
-            android:layout_centerVertical="true"/>
-    </RelativeLayout>
+            android:layout_margin="5dp"
+            android:background="#4682B4"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/img_cancel_start"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/cancel" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_toStartOf="@+id/img_cancel_end"
+                android:layout_toLeftOf="@+id/img_cancel_start"
+                android:layout_toEndOf="@+id/img_cancel_start"
+                android:layout_toRightOf="@+id/img_cancel_start"
+                android:padding="8dp"
+                android:text="Cancel Ticket"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <ImageView
+                android:id="@+id/img_cancel_end"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/right" />
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="#4682B4"
         android:elevation="8dp"
-        app:cardCornerRadius="10dp"
-        android:id="@+id/card_history">
+        app:cardBackgroundColor="#4682B4"
+        app:cardCornerRadius="10dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="8dp"
-        android:background="#4682B4">
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/history"
-            android:id="@+id/img_history_start"/>
-
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_toStartOf="@+id/img_history_end"
-            android:layout_toLeftOf="@+id/img_history_start"
-            android:layout_toEndOf="@+id/img_history_start"
-            android:layout_toRightOf="@+id/img_history_start"
-            android:text="Booking History"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/right"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:id="@+id/img_history_end"/>
+            android:layout_margin="5dp"
+            android:background="#4682B4"
+            android:padding="8dp">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/img_history_start"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/history" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_toStartOf="@+id/img_history_end"
+                android:layout_toLeftOf="@+id/img_history_start"
+                android:layout_toEndOf="@+id/img_history_start"
+                android:layout_toRightOf="@+id/img_history_start"
+                android:padding="8dp"
+                android:text="Booking History"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <ImageView
+                android:id="@+id/img_history_end"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/right" />
+
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

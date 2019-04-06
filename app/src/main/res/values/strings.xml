@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">example</string>
+    <string name="enter_your_credentials">Enter your credentials</string>
+
+    <string-array name="stations">
+        <item>Select Station</item>
+        <item>Nahur</item>
+        <item>Mulund</item>
+        <item>Thane</item>
+        <item>Airoli</item>
+        <item>Rabale</item>
+        <item>Ghansoli</item>
+        <item>Koparkhairne</item>
+        <item>Turbhe</item>
+        <item>Jui Nagar</item>
+        <item>SeaWoods Darave</item>
+        <item>CBD Belapur</item>
+        <item>Kharghar</item>
+        <item>Mansarovar</item>
+        <item>Khandeshwar</item>
+        <item>Panvel</item>
+    </string-array>
+
+    <string-array name="ticket_type">
+        <item name="-1">Select Ticket Type</item>
+        <item name="Journey">Journey</item>
+        <item name="Return">Return</item>
+    </string-array>
+
+    <string-array name="ticket_class">
+        <item name="-1">Select Ticket Class</item>
+        <item name="Journey">First</item>
+        <item name="Return">Second</item>
+    </string-array>
 </resources>
