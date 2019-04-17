@@ -3,29 +3,32 @@ package com.example.androidexamp.example.activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.androidexamp.example.BaseActivity;
 import com.example.androidexamp.example.R;
-import com.example.androidexamp.example.utils.Constants;
+import com.example.androidexamp.example.room.DatabaseCallback;
+import com.example.androidexamp.example.room.LocalCacheManager;
+import com.example.androidexamp.example.room.User;
 import com.example.androidexamp.example.utils.SharedPreferenceManager;
 import com.marlonmafra.android.widget.EditTextPassword;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Register extends BaseActivity {
+public class Register extends BaseActivity implements DatabaseCallback {
     @BindView(R.id.edtPhoneNumber)
     EditText edtPhoneNumber;
     @BindView(R.id.edtName)
@@ -73,17 +76,17 @@ public class Register extends BaseActivity {
     @OnClick(R.id.btnRegisterDone)
     void onRegister() {
         if (validate()) {
-            sharedPreferenceManager.saveValue(Constants.Phone, edtPhoneNumber.getText().toString());
-            sharedPreferenceManager.saveValue(Constants.Name, edtName.getText().toString());
-            sharedPreferenceManager.saveValue(Constants.Birthday, edtBirthday.getText().toString());
-            sharedPreferenceManager.saveValue(Constants.Password, edtRegisterConfirmPassword.getText().toString());
-            sharedPreferenceManager.saveValue(Constants.Email, edtEmail.getText().toString());
+            User user = new User();
+            user.setName(edtName.getText().toString());
+            user.setPhoneNumber(edtPhoneNumber.getText().toString());
+            int selectedId = rdGender.getCheckedRadioButtonId();
+            RadioButton selected = (RadioButton) findViewById(selectedId);
+            user.setGender(selected.getText().toString());
+            user.setDob(edtBirthday.getText().toString());
+            user.setEmail(edtEmail.getText().toString());
+            user.setPassword(edtRegisterConfirmPassword.getText().toString());
             uiUtils.showProgressDialog();
-            new Handler().postDelayed(() -> {
-                uiUtils.dismissDialog();
-                Intent intent = new Intent(Register.this, Login.class);
-                startActivity(intent);
-            }, 1000);
+            LocalCacheManager.getInstance(this).addUser(this, user);
 
         }
     }
@@ -113,7 +116,29 @@ public class Register extends BaseActivity {
             Toast.makeText(Register.this, "Both password should match", Toast.LENGTH_SHORT).show();
             return false;
         }
+        if (rdGender.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(Register.this, "Both password should match", Toast.LENGTH_SHORT).show();
+            return false;
 
+        }
         return true;
     }
+
+    @Override
+    public void onUserAdded() {
+        uiUtils.dismissDialog();
+        Intent intent = new Intent(Register.this, Login.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onLogin() {
+
+    }
+
+    @Override
+    public void onFailed() {
+
+    }
+
 }

@@ -24,6 +24,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    def room_version = "2.1.0-alpha06"
+
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.jakewharton:butterknife:10.1.0'
@@ -35,15 +37,22 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.marlonmafra.android.widget:edittext-password:1.0.0'
-    implementation 'io.realm:realm-annotations:0.88.3'
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
     implementation 'com.google.zxing:core:3.3.2'
     implementation 'com.marlonmafra.android.widget:edittext-password:1.0.0'
 
 
-    implementation 'io.realm:realm-android-library:0.88.3'
+    // for room
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+// for rxJava
+    implementation "io.reactivex.rxjava2:rxjava:2.1.17"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.2"// For Kotlin use kapt instead of annotationProcessor
 
-    implementation 'android.arch.persistence.room:runtime:' + rootProject.archRoomVersion
-    annotationProcessor 'android.arch.persistence.room:compiler:' + rootProject.archRoomVersion
-    annotationProcessor 'io.realm:realm-annotations-processor:0.88.3'
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }

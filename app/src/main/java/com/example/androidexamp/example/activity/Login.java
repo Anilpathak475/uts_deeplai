@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.example.androidexamp.example.BaseActivity;
 import com.example.androidexamp.example.R;
+import com.example.androidexamp.example.room.DatabaseCallback;
+import com.example.androidexamp.example.room.LocalCacheManager;
 import com.example.androidexamp.example.utils.Constants;
 import com.marlonmafra.android.widget.EditTextPassword;
 
@@ -21,7 +23,7 @@ import butterknife.OnClick;
 import static com.example.androidexamp.example.R.id;
 
 
-public class Login extends BaseActivity {
+public class Login extends BaseActivity implements DatabaseCallback {
     @BindView(R.id.edtEmail)
     EditText edtEmail;
 
@@ -60,13 +62,32 @@ public class Login extends BaseActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onUserAdded() {
+
+    }
+
+    @Override
+    public void onLogin() {
+        uiUtils.dismissDialog();
+        sharedPreferenceManager.saveValue(Constants.AutoLogin, Boolean.toString(chkLogin.isChecked()));
+        Toast.makeText(Login.this, "Login", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Login.this, BookTicket.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onFailed() {
+
+    }
+
     @OnClick(id.btn_login)
-    void onLogin() {
+    void onLoginClick() {
+
         if (validate()) {
-            sharedPreferenceManager.saveValue(Constants.AutoLogin, Boolean.toString(chkLogin.isChecked()));
-            Toast.makeText(Login.this, "Login", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Login.this, BookTicket.class);
-            startActivity(intent);
+            uiUtils.showProgressDialog();
+            LocalCacheManager.getInstance(this).login(this, edtEmail.getText().toString(), edtPassword.getText().toString());
+
         }
     }
 
@@ -77,15 +98,6 @@ public class Login extends BaseActivity {
         }
         if (TextUtils.isEmpty(edtPassword.getText().toString())) {
             Toast.makeText(Login.this, "Please enter your password", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-
-        if (!sharedPreferenceManager.getValue(Constants.Email).equalsIgnoreCase(edtEmail.getText().toString())) {
-            Toast.makeText(Login.this, "Email or password is wrong", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (!sharedPreferenceManager.getValue(Constants.Password).equalsIgnoreCase(edtPassword.getText().toString())) {
-            Toast.makeText(Login.this, "Email or password is wrong", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
